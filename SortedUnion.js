@@ -7,20 +7,7 @@ function uniteUnique(arr) {
       };
     });
   }
-  debug(accumulator);
   return accumulator;
 }
-//uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-
-
-
-var list1 = [[0, 1], [2, 3], [4, 5]];
-const flatten = arr => arr.reduce(
-  function(acc, val) { return acc.concat(
-    Array.isArray(val) ? flatten(val) : val
-  )}
-  ,[]
-);
-debug(flatten(list1)); // returns [0, 1, 2, 3, 4, 5]
-//flatten(list2); // returns [0, 1, 2, 3, 4, 5]
