@@ -1,0 +1,6 @@
+function convertToRoman(num) {	var digitArr=[]; //Vars
+	digitArr[0] = ["I","V","X"]; //We create an array for the ones (the default values)
+	digitArr[1] = ["X","L","C"]; //We create an array for the tens ('multiply' previous set by 10)
+	digitArr[2] = ["C","D","M"]; //We create an array for the hundreds ('multiply' previous set by 10)
+	digitArr[3] = ["M","√","ç"]; //We create an array for the thousands ('multiply' previous set by 10)	var myromanArr = ["","I","II","III","IV","V","VI","VII","VIII","IX"];
+	return ("000"+num) //Add leading zeros		.slice(-4) //Splice to 4 digits		.split("") //Split to array		.map( //Map to new array		function(value,index){  //Assuming 9461, function: value = 9 and index = 0, value = 4, index = 1, etc			return myromanArr[value]				.replace( //replace tens					/X/g,					digitArr[Math.abs(index-((("000"+num).slice(-4).split("")).length-1))][2]				)				.replace( //replace fives					/V/g,					digitArr[Math.abs(index-((("000"+num).slice(-4).split("")).length-1))][1]				)				.replace( //replace ones					/I/g,					digitArr[Math.abs(index-((("000"+num).slice(-4).split("")).length-1))][0]				);		})		.join("");}convertToRoman(9461);
