@@ -1,0 +1,604 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fmodern\fcharset0 Courier;\f4\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red148\green6\blue75;\red245\green245\blue245;\red38\green38\blue38;
+\red101\green71\blue146;\red132\green134\blue132;\red14\green114\blue164;\red19\green36\blue126;\red38\green38\blue38;
+\red242\green242\blue242;\red148\green6\blue75;\red255\green255\blue255;\red101\green71\blue146;\red19\green36\blue126;
+\red132\green134\blue132;\red14\green114\blue164;\red56\green120\blue83;\red93\green111\blue113;\red234\green237\blue239;
+\red129\green144\blue144;\red104\green26\blue29;\red235\green236\blue237;\red37\green127\blue159;\red36\green38\blue41;
+\red43\green39\blue19;}
+{\*\expandedcolortbl;;\csgenericrgb\c58039\c2353\c29412;\csgenericrgb\c96078\c96078\c96078;\csgenericrgb\c14902\c14902\c14902;
+\csgenericrgb\c39608\c27843\c57255;\csgenericrgb\c51765\c52549\c51765;\csgenericrgb\c5490\c44706\c64314;\csgenericrgb\c7451\c14118\c49412;\cssrgb\c20000\c20000\c20000;
+\cssrgb\c96078\c96078\c96078;\cssrgb\c65490\c11373\c36471;\cssrgb\c100000\c100000\c100000;\cssrgb\c47451\c36471\c63922;\cssrgb\c9412\c21176\c56863;
+\cssrgb\c58824\c59608\c58824;\cssrgb\c0\c52549\c70196;\cssrgb\c27451\c53725\c40000;\csgenericrgb\c36471\c43529\c44314;\csgenericrgb\c91765\c92941\c93725;
+\csgenericrgb\c50588\c56471\c56471;\csgenericrgb\c40784\c10196\c11373;\csgenericrgb\c92157\c92549\c92941;\csgenericrgb\c14510\c49804\c62353;\csgenericrgb\c14118\c14902\c16078;
+\csgenericrgb\c16863\c15294\c7451;}
+\margl1440\margr1440\vieww10800\viewh15300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 php:
+\b0 \
+unset\
+\
+\
+
+\b array.map\
+
+\b0 var oldArray = [1,2,3,4,5];\
+// Only change code below this line.\
+var newArray = oldArray.map(function(val) \{\
+  return val+3;\
+\});\
+\
+
+\b array.reduce\
+
+\b0 var array = [4,5,6,7,8];\
+var singleVal = 0;\
+// Only change code below this line.\
+singleVal = 
+\b array.reduce
+\b0 (function(previousVal, currentVal) \{\
+  console.log(currentVal);\
+  return previousVal + currentVal;  \
+\});\
+\
+
+\b array.filter
+\b0 \
+singleVal = 
+\b array.filter
+\b0 (function(val) \{\
+  return val < 6;  \
+\});\
+\
+
+\b array.sort
+\b0 \
+var array = [1, 12, 21, 2];\
+// Only change code below this line.\
+
+\b array.sort
+\b0 (function(a,b) \{\
+  return b - a;\
+\});\
+\
+
+\b array.reverse\
+
+\b0 var array = [1,2,3,4,5,6,7];\
+var newArray = [];\
+// Only change code below this line.\
+newArray = array.reverse();\
+\
+
+\b .concat
+\b0 \
+var oldArray = [1,2,3];\
+var newArray = [];\
+var concatMe = [4,5,6];\
+// Only change code below this line.\
+newArray = oldArray.concat(concatMe);\
+\
+
+\b .split\
+
+\b0 var string = "Split me into an array";\
+var array = [];\
+// Only change code below this line.\
+array = string.split(' ');\
+
+\b \
+.join
+\b0 \
+var joinMe = ["Split","me","into","an","array"];\
+var joinedString = '';\
+// Only change code below this line.\
+joinedString = joinMe.join(" ");\
+\
+.
+\b currentIssue
+\b0 \
+function findLongestWord(str) \{\
+  var arr = str.split(" ");  \
+  return str.length;\
+\}\
+findLongestWord("The quick brown fox jumped over the lazy dog");\
+\
+
+\b Longest Word:
+\b0 \
+function findLongestWord(str) \{\
+  var arr = str.split(" ");\
+  var lengthOfLongestWord = 0;\
+  var indexOfWord = 0;\
+  arr.forEach(function(currentValue, index) \{\
+    if(currentValue.length > lengthOfLongestWord) \{\
+      lengthOfLongestWord = currentValue.length;\
+    \}\
+  \});\
+  return lengthOfLongestWord;\
+\}\
+findLongestWord("The quick brown fox jumped over the lazy dog");\
+\
+\
+
+\b Capitalize first word
+\b0 \
+function titleCase(str) \{\
+  var arr = str.split(' ');\
+  var newArray = arr.map(function(val) \{\
+    val = val.toLowerCase();\
+    myArr = val.split('');\
+    //debug(myArr[0]);\
+    myArr[0] = myArr[0].toUpperCase();\
+    //debug(myArr[0]);\
+    return myArr.join('');\
+  \});\
+  //debug(newArray.join(' '));\
+  return newArray.join(' ');\
+\}\
+titleCase("I'm a little tea pot");\
+\
+\
+
+\b Return largest of each subarray\
+
+\b0 function largestOfFour(arr) \{\
+  // You can do this!\
+  myNewArray = arr.map(function(val) \{\
+  	val.sort(function(a,b) \{\
+  		return b-a;\
+  	\});\
+  	return val[0];\
+  \});  \
+  //debug(myNewArray);\
+  return myNewArray;\
+\}\
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\
+\
+\
+
+\b Confirm the ending\
+
+\b0 function confirmEnding(str, target) \{\
+  // "Never give up and good luck will find you."\
+  if(str.indexOf(target) === -1) \{\
+  	//debug(false);\
+  	return false;\
+  \}\
+  else \{\
+  	//debug(str.indexOf(target)); //Location of needle\
+    //debug(str.length); //Length of haystack\
+    //debug(target.length); //length of needle\
+	//debug(str.substring(str.length,str.length-target.length)); \
+    if(str.length -target.length === str.indexOf(target)) \{\
+	  	//debug(true);\
+    	return true;\
+    \}\
+    else \{\
+    	return false;\
+    \}\
+  \}\
+\}\
+confirmEnding("Bastian", "ian");\
+confirmEnding("Open sesame", "pen");\
+\
+
+\b Repeat a string:\
+
+\b0 function repeatStringNumTimes(str, num) \{\
+  // repeat after me\
+  var newString = "";\
+  for(var i=num;i>0;i--) \{\
+    newString = newString + str;\
+  \}\
+  //debug(newString);\
+  return newString;\
+\}\
+repeatStringNumTimes("abc", 3);\
+\
+
+\b Chunk Array\
+
+\b0 function chunkArrayInGroups(arr, size) \{\
+  // Break it up.\
+	var myArr = [];\
+	var mySubArr = [];\
+	var count = 0;\
+	for(var i = 0; i < arr.length; i++) \{\
+  		for(var j = 0; j < size; j++) \{\
+  		    mySubArr.push(arr[count]);\
+  			count++;\
+            if(count === arr.length) \{\
+              break;\
+            \}\
+  		\}\
+  		myArr.push(mySubArr);\
+        mySubArr = [];\
+        if(count === arr.length) \{\
+          return myArr;\
+        \}\
+  	\}\
+\}\
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4);\
+chunkArrayInGroups(["a", "b", "c", "d"], 2); //should return [["a", "b"], ["c", "d"]].\
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3); // should return [[0, 1, 2], [3, 4, 5]].\
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2); // should return [[0, 1], [2, 3], [4, 5]].\
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4); // should return [[0, 1, 2, 3], [4, 5]].\
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3); // should return [[0, 1, 2], [3, 4, 5], [6]].\
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4); // should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].\
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2); // should return [[0, 1], [2, 3], [4, 5], [6, 7], [8]].\
+\
+\
+\
+
+\b Better:\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs27\fsmilli13600 \cf2 \cb3 \expnd0\expndtw0\kerning0
+function\cf4  \cf5 chunkArrayInGroups\cf4 (arr, size) \{\
+  \cf6 // Break it up\cf4 \
+  \cf6 // It's already broken :(\cf4 \
+  arr \cf2 =\cf4  arr.\cf7 slice\cf4 ();\
+  \cf2 var\cf4  arr2 \cf2 =\cf4  [];\
+  \cf2 for\cf4 (\cf2 var\cf4  i \cf2 =\cf4  \cf7 0\cf4 , len \cf2 =\cf4  arr.\cf7 length\cf4 ; i \cf2 <\cf4  len; i\cf2 +=\cf4 size) \{\
+    arr2.\cf7 push\cf4 (arr.\cf7 slice\cf4 (\cf7 0\cf4 , size));\
+    arr \cf2 =\cf4  arr.\cf7 slice\cf4 (size);\
+  \}\
+  \cf2 return\cf4  arr2;\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 Best:\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs27\fsmilli13600 \cf2 \cb3 \expnd0\expndtw0\kerning0
+function\cf4  \cf5 chunkArrayInGroups\cf4 (arr, size) \{\
+  \cf6 // Break it up.\cf4 \
+  \cf2 var\cf4  newArr \cf2 =\cf4  [];\
+  \cf2 var\cf4  i \cf2 =\cf4  \cf7 0\cf4 ;\
+\
+  \cf2 while\cf4  (i \cf2 <\cf4  arr.\cf7 length\cf4 ) \{\
+    newArr.\cf7 push\cf4 (arr.\cf7 slice\cf4 (i, i\cf2 +\cf4 size));\
+    i \cf2 +=\cf4  size;\
+  \}\
+  \cf2 return\cf4  newArr;\
+\}\
+\cf5 chunkArrayInGroups\cf4 ([\cf8 "a"\cf4 , \cf8 "b"\cf4 , \cf8 "c"\cf4 , \cf8 "d"\cf4 ], \cf7 2\cf4 );\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+Slasher flick
+\b0 \
+function slasher(arr, howMany) \{\
+  // it doesn't always pay to be first\
+  for (var i = 0; i < howMany; i++) \{\
+    arr.shift();\
+  \}\
+  return arr;\
+\}\
+\
+slasher([1, 2, 3], 2);
+\b \
+\
+\
+\
+false bouncer
+\b0 \
+function bouncer(arr) \{\
+  // Don't show a false ID to this bouncer.\
+  return myNewArray = arr.filter(function(value) \{\
+    return value;    \
+  \});\
+\}\
+bouncer([7, "ate", "", null, false, 9, 0]);\
+//bouncer([false, null, 0, NaN, undefined, ""]);
+\b \
+\
+
+\b0 \
+
+\b false bouncer
+\b0 \
+function bouncer(arr) \{\
+  // Don't show a false ID to this bouncer.\
+  var myNewArray = arr.filter(function(value) \{\
+    var myBool = new Boolean(value);\
+    return myBool != false;    \
+  \});\
+  return myNewArray;\
+\}\
+\
+bouncer([7, "ate", "", null, false, 9, 0]);\
+//bouncer([false, null, 0, NaN, undefined, ""]);\
+\
+
+\b seek destroy\
+
+\b0 function destroyer(arr) \{\
+  var args = [].slice.call(arguments);\
+  args.unshift();\
+  return arr.filter(function(value) \{\
+    return args.indexOf(value) === -1;\
+  \});\
+\}\
+destroyer([1, 2, 3, 1, 2, 3], 4, 3);\
+//destroyer([2, 2, 3, 5, 1, 2, 3], 2, 3);\
+\
+
+\b Where do I belong:\
+
+\b0 function getIndexToIns(arr, num) \{\
+	arr.push(num);\
+  	return arr.sort(function(a,b) \{ return a - b; \}).indexOf(num);\
+\}\
+\
+getIndexToIns([40, 60], 50);\
+\
+\
+
+\b Caesars Cipher
+\b0 \
+function rot13(str) \{ // LBH QVQ VG!\
+  var alphabet = /[a-z]/;\
+  str = str.toLowerCase();\
+  str.split('');\
+  var myNewArray = [];\
+  for(var i = 0; i < str.length; i++) \{\
+    if(alphabet.indexOf(str[i]) === -1) \{\
+      myNewArray.push(str[i]);\
+    \}\
+    else \{\
+      myNewArray.push(alphabet[(alphabet.indexOf(str[i])+13)%26]);\
+    \}\
+  \}\
+  return myNewArray.join("").toUpperCase();\
+\}\
+// Change the inputs below to test\
+rot13("LBH QVQ VG");\
+\
+\
+\
+
+\b Wherefore art thou\
+
+\b0 function whatIsInAName(collection, source) \{\
+  // What's in a name?\
+  var arr = [];\
+  var myArr = [];\
+  // Only change code below this line\
+  collection.forEach(function(value1,index1,arr1) \{\
+    continues = true\
+    myArr = \{\};\
+    Object.keys(source).forEach(function(value2,index2,arr2) \{\
+      if(value1[value2] == source[value2]) \{\
+        myArr[value2] = value1[value2];\
+      \}\
+      else \{\
+        continues = false;\
+      \}\
+    \});\
+    if(continues === true) \{\
+      arr.push(value1);\
+    \}\
+  \});\
+  // Only change code above this line\
+  return arr;\
+\}\
+\
+whatIsInAName([\{ first: "Romeo", last: "Montague" \}, \{ first: "Mercutio", last: null \}, \{ first: "Tybalt", last: "Capulet" \}], \{ last: "Capulet" \});\
+\
+\
+\
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/pwitterholt/8218094121/" title="ZUIDWOLDE, THE NETHERLANDS"><img src="https://c1.staticflickr.com/9/8197/8218094121_e9049f6510_b.jpg" width="1024" height="575" alt="ZUIDWOLDE, THE NETHERLANDS"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>\
+\
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/ctfoto2013/12603431994/in/photolist-oL8LGV-oithAA-ohPqKF-rhGgqW-inCRjo-aFRJ3g-q1Vjgt-nELGWN-eLkUTy-s9gFxk-nB4KVL-qqpUa2-o7eB9N-f66AWs-qci3aB-qobEgK-nT6rHJ-qDSLtw-pHqnpx-ejSntp-puhDym-nbhbH7-ohHvSN-pAkqUo-qVm59s-nF97fE-qLEsHu-pVJVod-nqxFJR-gsCJvZ-pJNqaH-qUzZqE-pUdcoR-n7a5Sr-iTAeKm-sjYEQx-omFDSj-ddqMWw-r6V2mw-hR9doH-nSyfZ8-iPJkJU-yYhrs5-fzcCk4-scQtze-kcHTeC-iCML42-ozJMzf-fKK9g1-eZkCeK" title="Snow and Sun (2)"><img src="https://c1.staticflickr.com/6/5480/12603431994_c5af52a8a5_b.jpg" width="768" height="1024" alt="Snow and Sun (2)"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>\
+\
+\
+Default\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf9 \cb10 \expnd0\expndtw0\kerning0
+05f4d77524031a0574f1f635121ce97e\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 CodePen Weather\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf9 \cb10 \expnd0\expndtw0\kerning0
+badf73893d2c75fcbd6a099c9462bd94
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+\
+http://api.openweathermap.org/data/2.5/weather?q=Cincinnati,uk&appid=05f4d77524031a0574f1f635121ce97e\
+\
+\
+\
+\
+  $.getJSON("https://andruxnet-random-famous-quotes.p.mashape.com/?X-Mashape-Key=Ej9hit9iFDmsh6UIYSikF73wsEjkp1Yx0sqjsnJDBP7Ct5IdHo", function(json) \{\
+      $("#randomQuote").html(JSON.stringify(json));\
+    \});\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clmgf \clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clmrg \clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f1 \cf11 \cb12 \expnd0\expndtw0\kerning0
+var\cf9  output \cf11 =\cf9  $.\cf13 ajax\cf9 (\{\cb1 \cell 
+\pard\intbl\itap1\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     url\cf11 :\cf9  \cf14 'https://SOMEAPI.p.mashape.com/'\cf9 , \cf15 // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile\cf9 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     type\cf11 :\cf9  \cf14 'GET'\cf9 , \cf15 // The HTTP Method, can be GET POST PUT DELETE etc\cf9 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     data\cf11 :\cf9  \{\}, \cf15 // Additional parameters here\cf9 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     dataType\cf11 :\cf9  \cf14 'json'\cf9 ,\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     \cf13 success\cf11 :\cf9  \cf11 function\cf9 (data) \{\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     	\cf15 //\cf9 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12         \cf15 //Change data.source to data.something , where something is whichever part of the object you want returned.\cf9 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12         \cf15 //To see the whole object you can output it to your browser console using:\cf9 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12         \cf15 //console.log(data);\cf9 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12        	\cf16 document\cf9 .\cf16 getElementById\cf9 (\cf14 "output"\cf9 ).innerHTML \cf11 =\cf9  data.\cf16 source\cf9 ; \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12         \},\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     \cf13 error\cf11 :\cf9  \cf11 function\cf9 (err) \{ \cf13 alert\cf9 (err); \},\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     \cf13 beforeSend\cf11 :\cf9  \cf11 function\cf9 (xhr) \{\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     xhr.\cf16 setRequestHeader\cf9 (\cf14 "X-Mashape-Authorization"\cf9 , \cf14 "
+\f0\fs26 \cf17 \cb10 Ej9hit9iFDmsh6UIYSikF73wsEjkp1Yx0sqjsnJDBP7Ct5IdHo
+\f1\fs24 \cf14 \cb12 "\cf9 ); \cf15 // Enter here your Mashape key\cf9 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12     \}\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth664\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth18477\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf9 \cb12 \});\cell \lastrow\row
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs44 \cf18 \cb19 \expnd0\expndtw0\kerning0
+sudo ln 
+\f4\b \cf20 -
+\f3\b0 \cf18 s /System/Library
+\f4\b \cf20 /
+\f3\b0 \cf18 Frameworks
+\f4\b \cf20 /
+\f3\b0 \cf18 JavaScriptCore
+\f4\b \cf20 .
+\f3\b0 \cf18 framework
+\f4\b \cf20 /
+\f3\b0 \cf18 Resources
+\f4\b \cf20 /
+\f3\b0 \cf18 jsc /usr/local
+\f4\b \cf20 /
+\f3\b0 \cf18 bin
+\f4\b \cf20 /
+\f3\b0 \cf18 js
+\fs49 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs44 \cf18 \cb19 \expnd0\expndtw0\kerning0
+sudo ln 
+\f4\b \cf20 -
+\f3\b0 \cf18 s 
+\f1\fs26 \cf21 \cb22 /System/\cf23 Library\cf24 /\cf23 Frameworks\cf24 /\cf23 JavaScriptCore\cf24 .framework/\cf23 Versions\cf24 /\cf23 Current\cf24 /\cf23 Resources\cf24 /jsc\cf25 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+\
+}
