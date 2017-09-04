@@ -1,3 +1,4 @@
+
 function translatePigLatin(str) {
   var myArr = str.split("");
   var myVowels = ["a","e","i","o","u"];
@@ -13,7 +14,7 @@ function translatePigLatin(str) {
       }
       else {
         myConsonant = myArr.shift();
-        myArr.push(myConsonant);  
+        myArr.push(myConsonant);
       }
     }
     myArr.push("ay");
@@ -23,4 +24,3 @@ function translatePigLatin(str) {
 }
 
 translatePigLatin("glove");
-
